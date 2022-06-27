@@ -1,0 +1,208 @@
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../Fonts/RobotoCondensed-Regular.ttf')format('opentype');
+    src: url('../Fonts/RobotoCondensed-Light.ttf') format('opentype')
+  }
+
+  *, *::after, *::before {
+    box-sizing: border-box;
+    margin:0;
+    padding:0
+  }
+
+  body{
+    font-family: 'Roboto Condensed';
+   
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    align-items: center;
+    justify-items: center;
+
+    width: 91vw;
+    height: 100vh;
+    
+    margin: auto;
+
+    max-width: 1760px;
+
+    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.5rem;
+
+    background-color: #2B2D42;
+
+}
+
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    min-height: 142px;
+   
+    margin-top: 22px;
+    border-radius: 100px;
+
+    font-weight: regular;
+    font-size: 4rem;
+
+    background-color: #fff;
+    /* border: 1px solid red; */
+  }
+
+  header span{
+    margin-right: 20px;
+  }
+
+  .container{
+    width: 100%;
+    display: flex;
+    gap: 19px;
+
+    align-items:center;
+  }
+
+  .navAside{
+    max-width: 222px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+  }
+
+  .navAsideCard{
+    width: 100%;
+    min-height: 110px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #CEFF1A;
+    border-radius: 20px;
+  }
+
+  .mainCard{
+    width: 86.3%;
+    max-width: 1519px;
+    min-height: 720px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+
+    background: #CEFF1A;
+    border-radius: 20px;
+  }
+
+  .navMainCard{
+    max-width: 1368px;
+    width:90%;
+
+    display: flex;
+    gap: 20px;
+
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .navMainCardSelector{
+    max-width: 327px;
+    width: 100%;
+    min-height: 64px;
+
+    margin-top: 37px;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #CFCFCD;
+    background-color: #fff;
+
+  }
+
+  .navMainCardSelector:hover{
+    color: #1282A2;
+
+  }
+
+  #statusCard{
+    color: #1282A2;
+  }
+
+  #mainCardContent{
+    width:80%;
+
+    gap: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .CardContainer{
+    max-width: 398px;
+    width: 100%;
+    min-height: 447px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    border-radius: 20px;
+    background-color: #2B2D42;
+  }
+
+  .CardContainerHeader {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    max-width: 327px;
+    width: 90%;
+    min-height: 64px;
+
+    margin-top: 40px;
+
+    border-radius: 20px;
+    background-color: #CEFF1A;
+  }
+
+  .itemsCardContainerList{
+    margin-top: 30px;
+
+    color: #fff;
+
+  }
+  .containerItemList{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    column-gap: 24px;
+
+    margin-bottom: 13px;
+  }
+
+  .circle{
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    background-color: #57ff86;
+  }

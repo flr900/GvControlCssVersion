@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GvControl</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <img src="../img/globoLogo.png" alt="logo" class="logoImg">
+        <span>GV CONTROL DC1</span>
+    </header>
+
+    <div class="container">
+        <aside class="navAside" >
+            <div class="navAsideCard">
+                <span>
+                    SW MIX 1
+                </span>
+            </div>
+            <div class="navAsideCard">
+                <span>
+                    SW MIX 2
+                </span>
+            </div>
+            <div class="navAsideCard">
+                <span>
+                    SW MIX 3
+                </span>
+            </div>
+            <div class="navAsideCard">
+                <span>
+                    SW MIX 4
+                </span>
+            </div>
+            <div class="navAsideCard">
+                <span>
+                    SW MIX 5
+                </span>
+            </div>
+            <div class="navAsideCard">
+                <span>
+                    SW MIX 6
+                </span>
+            </div>
+        </aside>
+        <div class="mainCard">
+            <div class="navMainCard">
+                <div class="navMainCardSelector" id="statusCard">
+                    <span>
+                        STATUS
+                    </span>
+                </div>
+                <div class="navMainCardSelector" id="gainCard">
+                    <span>
+                        AUDIO GAIN
+                    </span>
+                </div>
+                <div class="navMainCardSelector" id="delayCard">
+                    <span>
+                        AUDIO DELAY
+                    </span>
+                </div>
+                <div class="navMainCardSelector" id="bwayCard">
+                    <span>
+                        BREAKAWAY
+                    </span>
+                </div>
+            </div>
+            <div id="mainCardContent">
+                <div class="CardContainer" id="leftMainCardContainer">
+                    <div class="CardContainerHeader"> 
+                        <span>PRESENCE ADC</span> 
+                    </div>
+                    <div class="itemsCardContainerList" id="leftContainerList">
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN1</span>
+                        </div> 
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN2</span>
+                        </div> 
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN3</span>
+                        </div> 
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN4</span>
+                        </div> 
+                    </div>
+                </div>
+                <div class="CardContainer" id="rightMainCardContainer">
+                    <div class="CardContainerHeader"> 
+                        <span>PRESENCE MUX</span> 
+                    </div>
+                    <div class="itemsCardContainerList" id="leftContainerList">
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>VIDEO</span>
+                        </div> 
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN1</span>
+                        </div> 
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN2</span>
+                        </div> 
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN3</span>
+                        </div> 
+                        <div class="containerItemList">
+                            <div class="circle"></div>
+                            <span>AUDIO IN4</span>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+<script src="./Components/slider.js"></script>
+</html>
