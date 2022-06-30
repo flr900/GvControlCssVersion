@@ -1,6 +1,6 @@
 
 function getHtml(){  
-    const muxStatus = []
+    var muxStatus = []
     
    fetch('./htmlExamples/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt').then(res =>  {
         return res.text()
@@ -43,13 +43,13 @@ function getHtml(){
         })
          
     })
-    console.log(muxStatus)
+    // console.log(muxStatus)
     return muxStatus
 
 }
 
 const muxStatus = getHtml()
-// console.log(muxStatus)
+console.log(muxStatus[0])
 
 const pageMuxStatus = document.querySelectorAll('#rightMainCardContainer .containerItemList .circle')
 
