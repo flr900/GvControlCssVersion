@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"><html>
+<head> <META http-equiv="pragma" content="no-cache"><META http-equiv="expires" content="-1"><title>Audio Delay</title>
+<meta http-equiv="content-typ" content="text/html;charset=iso-8859-1"><SCRIPT LANGUAGE="JavaScript">
+ <!--hide
+function delEditBox(theForm, a ){
+for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+if(e.name == a) {
+e.value = "OP(DEL)";
+theForm.submit(); }               }
+return false }
+//stop hiding -->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+ <!--hide
+function fineInc(theForm, a, autoValue, imageIndex){
+for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+var lim = fineStep + 255;if(e.name == a) {
+x = e.value - 0;
+e.value = x + fineStep - 0;
+if ( e.value > lim ){ e.value = lim; }
+upDateMeter(theForm, a, imageIndex); 
+}}
+return false }
+function fineDec(theForm, a, autoValue, imageIndex)  {
+for(var i = 0; i < theForm.length; i++)  {
+ var e = theForm.elements[i];
+var lim = 0 - fineStep;if(e.name == a) {
+ x = e.value - 0;
+ e.value = x -  fineStep - 0;
+if ( e.value < lim ) {e.value = lim; } 
+ upDateMeter(theForm, a, imageIndex); 
+ }}
+return false }
+ function inc(theForm, a, autoValue, imageIndex) {
+ for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+var lim = step + 255;if(e.name == a)  {
+ x = e.value - 0;
+e.value = x +  step - 0;
+if ( e.value > lim ) {e.value = lim;}
+upDateMeter(theForm, a, imageIndex); 
+ }}
+ return false }
+ function dec(theForm, a, autoValue, imageIndex) {
+for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+var lim = 0 - step;if(e.name == a) {
+x = e.value - 0;
+e.value = x - step - 0;
+if ( e.value < lim ) {  e.value = lim; } 
+upDateMeter(theForm, a, imageIndex);
+ }}
+return false }
+function upDateMeter(theForm, paramName, imageName) {
+for(var i = 0; i < theForm.length; i++) {
+var param = theForm.elements[i];
+if(param.name == paramName) {
+for (var n = 0; n < document.images.length; n++){
+ var imageObject = document.images[n];
+if( imageObject.name == imageName ) {
+var sliderEnds     = n + numImages - 0;
+var relIndex       = param.value / 5;
+if ( relIndex > 55 ) {  relIndex = 55; } 
+if ( relIndex < 0 ) {  relIndex = 0; } 
+var onLimit        = n + relIndex - 0;
+for(var j = n-0; j < sliderEnds - 0; j++){
+if ( j < onLimit ){ document.images[j].src = on.src;}
+else {document.images[j].src = off.src;}
+}
+}
+}
+}
+}
+return false }
+//stop hiding -->
+</SCRIPT>
+<style>A:link{font-size:small} A:visited{font-size:small} </style>
+<META http-equiv="pragma" content="no-cache"><META http-equiv="expires" content="-1"></head>
+<body bgcolor="#ffffff" style="margin-left:10" >
+<left><basefont face="Arial">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><a href="/frame/slot_9/devstatus.htm" target="device" ><img src="/images/WARNled.gif" alt="Slot Status: WARN" border="0" hspace="0" vspace="0" ></a>
+</td><td><table><tr><td><font face="ARIAL"><font size = +1><b>Audio Delay</b></font></td><td valign="middle"><a href="cntaudio_delay.htm" target="page"><img src="/images/refresh.gif" alt="refresh page" border="0" hspace="0" vspace="0"></a>
+</font></font></td/></tr></table></td>
+</tr>
+</table>
+<table   ><tr  ><td  align="left" valign="middle" >Model: <font color="#0000FF">8921ADT</font> 
+Description: <font color="#0000FF">4 Chan Aud ADC/Trk/D</font> 
+</td>
+</tr>
+<tr  ><td  >Frame Location: <font color="#0000FF">Rack 416</font> 
+, Slot: <font color="#0000FF"> 9</font> 
+</td>
+</tr>
+</table>
+Last Recalled E-MEM: <font color="#0000FF">-</font> 
+<table   ><tr  ><td  colspan="3" ><table  border="1"  ><tr align="center"  ><td ></td>
+<td  colspan="2" ><b >AES 1
+</b></td>
+<td  colspan="2" ><b >AES 2
+</b></td>
+</tr>
+<tr align="center"  ><td  align="right" >Channel
+</td>
+<td  >A
+</td>
+<td  >B
+</td>
+<td  >C
+</td>
+<td  >D
+</td>
+</tr>
+<tr align="center"  ><td  align="right" >Selection
+</td>
+<td  ><font color="#0000FF">Audio In 1</font> 
+</td>
+<td  ><font color="#0000FF">Audio In 2</font> 
+</td>
+<td  ><font color="#0000FF">Audio In 3</font> 
+</td>
+<td  ><font color="#0000FF">Audio In 4</font> 
+</td>
+</tr>
+<tr align="center"  ><td  align="right" >Total Delay
+</td>
+<td  ><font color="#0000FF">0</font> mS
+</td>
+<td  ><font color="#0000FF">0</font> mS
+</td>
+<td  ><font color="#0000FF">0</font> mS
+</td>
+<td  ><font color="#0000FF">0</font> mS
+</td>
+</tr>
+<tr align="center"  ><td  align="right" >Enable Auto Track
+</td>
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_delay.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm" >
+<input type="checkbox" name="PID65862" value="ENUMINT(1)" onClick="this.form.submit()">On</td><td>
+ </form></td></tr></table>
+
+</td>
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_delay.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm" >
+<input type="checkbox" name="PID131398" value="ENUMINT(1)" onClick="this.form.submit()">On</td><td>
+ </form></td></tr></table>
+
+</td>
+</tr>
+<tr align="center"  ><td  align="right" >Auto Tracking Delay
+</td>
+<td  colspan="2" ><font color="#0000FF">0</font> mS
+</td>
+<td  colspan="2" ><font color="#0000FF">0</font> mS
+</td>
+</tr>
+<tr align="center"  ><td  align="right" >Delay Locking
+</td>
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_delay.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm" >
+<input type="checkbox" name="PID65857" value="ENUMINT(0)" onClick="this.form.submit()">Locked</td><td>
+ </form></td></tr></table>
+
+</td>
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_delay.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm" >
+<input type="checkbox" name="PID131393" value="ENUMINT(0)" onClick="this.form.submit()">Locked</td><td>
+ </form></td></tr></table>
+
+</td>
+</tr>
+<tr  ><td  align="right" >Delay
+</td>
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_delay.htm">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm">
+Delay (mS)</td></tr>
+<tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
+</td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
+</td>
+<td align="center"><input type="text" name="PID65863" size="10" maxlength="12" value="0"></td>
+<td align="center" ><input type="submit" name="OPSet" value="*"></td>
+<td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
+<td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
+</td></tr>
+<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td bgcolor="#C6C3C6"></td></tr></table>
+</td>
+<td align="right" ><input type="submit" name="OPSCALE5000.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=mS><input type=hidden name=MODE value=unitsMode ></td></form>
+</tr>
+</table>
+</td></tr></table>
+
+</td>
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_delay.htm">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm">
+Delay (mS)</td></tr>
+<tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
+</td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
+</td>
+<td align="center"><input type="text" name="PID131399" size="10" maxlength="12" value="0"></td>
+<td align="center" ><input type="submit" name="OPSet" value="*"></td>
+<td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
+<td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
+</td></tr>
+<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td bgcolor="#C6C3C6"></td></tr></table>
+</td>
+<td align="right" ><input type="submit" name="OPSCALE5000.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=mS><input type=hidden name=MODE value=unitsMode ></td></form>
+</tr>
+</table>
+</td></tr></table>
+
+</td>
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_delay.htm">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm">
+Delay (mS)</td></tr>
+<tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
+</td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
+</td>
+<td align="center"><input type="text" name="PID196935" size="10" maxlength="12" value="0"></td>
+<td align="center" ><input type="submit" name="OPSet" value="*"></td>
+<td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
+<td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
+</td></tr>
+<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td bgcolor="#C6C3C6"></td></tr></table>
+</td>
+<td align="right" ><input type="submit" name="OPSCALE5000.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=mS><input type=hidden name=MODE value=unitsMode ></td></form>
+</tr>
+</table>
+</td></tr></table>
+
+</td>
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_delay.htm">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_delay.htm">
+Delay (mS)</td></tr>
+<tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
+</td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
+</td>
+<td align="center"><input type="text" name="PID262471" size="10" maxlength="12" value="0"></td>
+<td align="center" ><input type="submit" name="OPSet" value="*"></td>
+<td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
+<td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
+</td></tr>
+<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td bgcolor="#C6C3C6"></td></tr></table>
+</td>
+<td align="right" ><input type="submit" name="OPSCALE5000.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=mS><input type=hidden name=MODE value=unitsMode ></td></form>
+</tr>
+</table>
+</td></tr></table>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr  ><td  align="left" ><a href="/frame/slot_9/cntaudio_channel_pairing.htm" target="page" >Back
+</a>
+</td>
+<td  align="center" ><a href="/frame/slot_9/cntfunctional_view.htm" target="page" >Functional View
+</a>
+</td>
+<td  align="right" ><a href="/frame/slot_9/cntaudio_proc.htm" target="page" >Next
+</a>
+</td>
+</tr>
+</table>
+
+</font></left>
+</body>
+</html>

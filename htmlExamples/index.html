@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"><html>
+<head> <META http-equiv="pragma" content="no-cache"><META http-equiv="expires" content="-1"><title>Audio Embedder</title>
+<meta http-equiv="content-typ" content="text/html;charset=iso-8859-1"><SCRIPT LANGUAGE="JavaScript">
+function delEditBox(theForm, a ){
+for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+if(e.name == a) {
+e.value = "OP(DEL)";
+theForm.submit(); }               }
+return false }
+//stop hiding -->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+function fineInc(theForm, a, autoValue, imageIndex){
+for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+var lim = fineStep + 255;if(e.name == a) {
+x = e.value - 0;
+e.value = x + fineStep - 0;
+if ( e.value > lim ){ e.value = lim; }
+upDateMeter(theForm, a, imageIndex); 
+}}
+return false }
+function fineDec(theForm, a, autoValue, imageIndex)  {
+for(var i = 0; i < theForm.length; i++)  {
+ var e = theForm.elements[i];
+var lim = 0 - fineStep;if(e.name == a) {
+ x = e.value - 0;
+ e.value = x -  fineStep - 0;
+if ( e.value < lim ) {e.value = lim; } 
+ upDateMeter(theForm, a, imageIndex); 
+ }}
+return false }
+ function inc(theForm, a, autoValue, imageIndex) {
+ for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+var lim = step + 255;if(e.name == a)  {
+ x = e.value - 0;
+e.value = x +  step - 0;
+if ( e.value > lim ) {e.value = lim;}
+upDateMeter(theForm, a, imageIndex); 
+ }}
+ return false }
+ function dec(theForm, a, autoValue, imageIndex) {
+for(var i = 0; i < theForm.length; i++) {
+var e = theForm.elements[i];
+var lim = 0 - step;if(e.name == a) {
+x = e.value - 0;
+e.value = x - step - 0;
+if ( e.value < lim ) {  e.value = lim; } 
+upDateMeter(theForm, a, imageIndex);
+ }}
+return false }
+function upDateMeter(theForm, paramName, imageName) {
+for(var i = 0; i < theForm.length; i++) {
+var param = theForm.elements[i];
+if(param.name == paramName) {
+for (var n = 0; n < document.images.length; n++){
+ var imageObject = document.images[n];
+if( imageObject.name == imageName ) {
+var sliderEnds     = n + numImages - 0;
+var relIndex       = param.value / 5;
+if ( relIndex > 55 ) {  relIndex = 55; } 
+if ( relIndex < 0 ) {  relIndex = 0; } 
+var onLimit        = n + relIndex - 0;
+for(var j = n-0; j < sliderEnds - 0; j++){
+if ( j < onLimit ){ document.images[j].src = on.src;}
+else {document.images[j].src = off.src;}
+}
+}
+}
+}
+}
+return false }
+//stop hiding -->
+</SCRIPT>
+<style>TABLE.BASE { margin-left:10px; border-color:silver; font-style:normal; }
+              TABLE.GRPST { border-color:silver; font-style:normal; width:650px; }
+              TABLE.GRPIR { border-color:silver; font-style:normal; }
+              A:link{color:blue} A:visited{color:blue} A:hover{color:red}</style>
+<META http-equiv="pragma" content="no-cache"><META http-equiv="expires" content="-1"></head>
+<body bgcolor="#ffffff" style="margin-left:10" >
+<left><basefont face="Arial">
+<table border="0" cellpadding="0" cellspacing="0"><tr><td><a href="/frame/slot_10/devstatus.htm" target="device" ><img src="/images/PASSled.gif" alt="Slot Status: PASSED" border="0" hspace="0" vspace="0" ></a>
+</td><td><table><tr><td><font face="ARIAL"><font size = +1><b>Audio Embedder</b></font></td><td valign="middle"><a href="cntaudio_embedder.htm" target="page"><img src="/images/refresh.gif" alt="refresh page" border="0" hspace="0" vspace="0"></a>
+</font></font></td/></tr></table></td>
+</tr>
+</table>
+<table   ><tr  ><td  align="left" valign="middle" >Model: <font color="#0000FF">8925EMB-B</font> 
+Description: <font color="#0000FF">HD/SD Digital Audio Embedder</font> 
+</td>
+</tr>
+<tr  ><td  >Frame Location: <font color="#0000FF">Rack 416</font> 
+, Slot: <font color="#0000FF">10</font> 
+</td>
+</tr>
+</table>
+<table  border="0"  ><tr  ><td >Input Video Standard: <font color="#0000FF">HD 1080i/59.94</font> 
+</td>
+<td  width="10" ></td>
+<td >Input Video: <font color="#0000FF">Coax In</font> 
+ : <font color="#0000FF">Present</font> 
+</td>
+</tr>
+</table>
+<br><table   cellpadding="0" cellspacing="0" CLASS="BASE" frame="BOX" rules="NONE" ><tr  ><td  ><table  ><tr><td><br><a name=""><b>
+</b></a><br><table  border="0"  cellpadding="0" cellspacing="0" ><tr  ><td  bgcolor="#EEEEEE" align="center" width="100" ><b><font size ='3'>Output</font></b>
+</td>
+<td  bgcolor="#EEEEEE" align="center" width="130" ><b><font size ='3'>Stream Selection</font></b>
+</td>
+<td  bgcolor="#EEEEEE" align="center" width="140" ><b><font size ='3'>Stream Name</font></b>
+</td>
+<td  bgcolor="#EEEEEE" align="center" width="120" colspan="2" ><b><font size ='3'>Resolution</font></b>
+</td>
+<td  bgcolor="#EEEEEE" align="center" width="100" ><b><font size ='3'>Processing</font></b>
+</td>
+<td  bgcolor="#EEEEEE" align="center" width="110" ><b><font size ='3'>Status</font></b>
+</td>
+</tr>
+<tr  ><td  height="20" colspan="7" >
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 1 Str A</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID305" onChange="this.form.submit()"><option selected value="Audio Input 1" >Audio Input 1<option value="Audio Input 2" >Audio Input 2<option value="Audio Input 3" >Audio Input 3<option value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">AES In1</font> 
+</td>
+<td  align="right" rowspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID306" onChange="this.form.submit()">
+    <option value="20 bit" >20 bit
+    <option value="24 bit" >24 bit
+    <option selected value="Auto" >Auto
+    </select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="left" rowspan="2" ><font color="#0000FF">20 bit</font> 
+</td>
+<td  align="center" rowspan="2" ><font color="#0000FF">Replaced</font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 1 Str B</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID65841" onChange="this.form.submit()"><option value="Audio Input 1" >Audio Input 1<option selected value="Audio Input 2" >Audio Input 2<option value="Audio Input 3" >Audio Input 3<option value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">AES In2</font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+<tr height="10"  ><td  colspan="7" ><hr>
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 2 Str A</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID131377" onChange="this.form.submit()"><option value="Audio Input 1" >Audio Input 1<option value="Audio Input 2" >Audio Input 2<option selected value="Audio Input 3" >Audio Input 3<option value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">AES In3</font> 
+</td>
+<td  align="right" rowspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID65842" onChange="this.form.submit()"><option value="20 bit" >20 bit<option value="24 bit" >24 bit<option selected value="Auto" >Auto</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="left" rowspan="2" ><font color="#0000FF">20 bit</font> 
+</td>
+<td  align="center" rowspan="2" ><font color="#0000FF">Replaced</font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 2 Str B</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID196913" onChange="this.form.submit()"><option value="Audio Input 1" >Audio Input 1<option value="Audio Input 2" >Audio Input 2<option value="Audio Input 3" >Audio Input 3<option selected value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">AES In4</font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+<tr height="10"  ><td  colspan="7" ><hr>
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 3 Str A</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID262449" onChange="this.form.submit()"><option value="Audio Input 1" >Audio Input 1<option value="Audio Input 2" >Audio Input 2<option value="Audio Input 3" >Audio Input 3<option value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option selected value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">Coax In.G3.S1 </font> 
+</td>
+<td  align="center" colspan="2" rowspan="2" ><font color="#0000FF">----</font> 
+</td>
+<td  align="center" rowspan="2" ><font color="#0000FF">Passed</font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 3 Str B</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID327985" onChange="this.form.submit()"><option value="Audio Input 1" >Audio Input 1<option value="Audio Input 2" >Audio Input 2<option value="Audio Input 3" >Audio Input 3<option value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option selected value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">Coax In.G3.S2 </font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+<tr height="10"  ><td  colspan="7" ><hr>
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 4 Str A</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID393521" onChange="this.form.submit()"><option value="Audio Input 1" >Audio Input 1<option value="Audio Input 2" >Audio Input 2<option value="Audio Input 3" >Audio Input 3<option value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option selected value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">Coax In.G4.S1 </font> 
+</td>
+<td  align="center" colspan="2" rowspan="2" ><font color="#0000FF">----</font> 
+</td>
+<td  align="center" rowspan="2" ><font color="#0000FF">Passed</font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+<tr  ><td  align="center" ><b><font size ='3'>Grp 4 Str B</font></b>
+</td>
+<td  align="center" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_embedder.htm#">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.10"><input type="hidden"  name="MID" value="7" >
+<input type="hidden" name="URL" value="cntaudio_embedder.htm#" >
+<select name="PID459057" onChange="this.form.submit()"><option value="Audio Input 1" >Audio Input 1<option value="Audio Input 2" >Audio Input 2<option value="Audio Input 3" >Audio Input 3<option value="Audio Input 4" >Audio Input 4<option value="Silence" >Silence<option selected value="Pass Group" >Pass Group<option value="Delete Group" >Delete Group</select></td><td>
+ </form></td></tr></table>
+
+</td>
+<td  align="center" ><font color="#0000FF">Coax In.G4.S2 </font> 
+</td>
+<td  align="center" ><font color="#0000FF">Present</font> 
+</td>
+</tr>
+</table>
+</td></tr></table></td>
+</tr>
+</table>
+<br><tr  ><td ><table   ><tr  ><td  align="left" ><table><tr><td><form method= "get" action="cntaudio_embedder.htm"><input type="hidden"  name="DID" value="1.10"><input type="hidden" name="MID" value="7" ><input type="hidden" name="URL" value="cntaudio_embedder.htm" >
+<input type ="submit" name="PID309" value="Defaults"></td>
+<td></form></td></tr></table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+</font></left>
+</body>
+</html>
