@@ -1,6 +1,6 @@
 
 function getHtml(){  
-    var muxStatus = []
+    const muxStatus = []
     
    fetch('./htmlExamples/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt').then(res =>  {
         return res.text()
@@ -38,6 +38,7 @@ function getHtml(){
             CH8 = htmlCH8.children[3].children[0].innerHTML
         ]
         
+        //VERIFICAR FOR EACH//
         muxParsedStatus.forEach(itemStatus => {
             muxStatus.push(itemStatus)
         })
