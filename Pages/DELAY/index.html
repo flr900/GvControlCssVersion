@@ -4,43 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GvControl</title>
+    <title>STATUS</title>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body onload="onLoadStatusPage()">
     <header>
-        <img src="../img/globoLogo.png" alt="logo" class="logoImg">
-        <span>GV CONTROL DC1</span>
+        <a href="../../index.html">
+            <img src="../../img/globoLogo.png" alt="logo" class="logoImg">
+        </a>
+            <span>GV CONTROL DC1</span>
     </header>
 
     <div class="container">
         <aside class="navAside" >
-            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix1" tabindex="-1">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" id="swMix1" value="swMix1" tabindex="-1">
                 <span>
                     SW MIX 1
                 </span>
             </div>
-            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix2" tabindex="-1">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" id="swMix2" value="swMix2" tabindex="-1">
                 <span>
                     SW MIX 2
                 </span>
             </div>
-            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix3" tabindex="-1">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" id="swMix3" value="swMix3" tabindex="-1">
                 <span>
                     SW MIX 3
                 </span>
             </div>
-            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix4" tabindex="-1">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" id="swMix4" value="swMix4" tabindex="-1">
                 <span>
                     SW MIX 4
                 </span>
             </div>
-            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix5" tabindex="-1"> 
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" id="swMix5" value="swMix5" tabindex="-1"> 
                 <span>
                     SW MIX 5
                 </span>
             </div>
-            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix6" tabindex="-1">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" id="swMix6" value="swMix6" tabindex="-1">
                 <span>
                     SW MIX 6
                 </span>
@@ -48,26 +50,26 @@
         </aside>
         <div class="mainCard">
             <div class="navMainCard">
-                <a class="navMainCardSelector" onClick="" id="statusCard" href="./Pages/STATUS/index.html">
+                <a class="navMainCardSelector" onClick="" id="statusCard" href="../STATUS/index.html">
                     <span>
                         STATUS
                     </span>
                 </a>
-                <div class="navMainCardSelector" id="gainCard">
+                <a class="navMainCardSelector" onClick="" id="gainCard" href="../GAIN/index.html">
                     <span>
                         GAIN
                     </span>
-                </div>
-                <div class="navMainCardSelector" id="delayCard">
+                </a>
+                <a class="navMainCardSelector" onClick="" id="delayCard" href="../DELAY/index.html">
                     <span>
                         DELAY
                     </span>
-                </div>
-                <div class="navMainCardSelector" id="bwayCard">
+                </a>
+                <a class="navMainCardSelector" onClick="" id="bwayCard" href="../BWAY/index.html">
                     <span>
                         BREAKAWAY
                     </span>
-                </div>
+                </a>
             </div>
             <div id="mainCardContent">
                 <div class="CardContainer" id="leftMainCardContainer">

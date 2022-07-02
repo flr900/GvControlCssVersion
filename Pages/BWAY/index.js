@@ -3,49 +3,49 @@ const swmixRoutes = [
     swMix1= {
         'name': 'swMix1',
         'status':{
-            'firstAdcRoute': './htmlExamples/SwMix1/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': './htmlExamples/SwMix1/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': './htmlExamples/SwMix1/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+            'firstAdcRoute': '../../htmlExamples/SwMix1/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix1/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
+            'muxRoute': '../../htmlExamples/SwMix1/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
         }
     },
     swMix2= {
         'name': 'swMix2',
         'status':{
-            'firstAdcRoute': './htmlExamples/SwMix2/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': './htmlExamples/SwMix2/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': './htmlExamples/SwMix2/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+            'firstAdcRoute': '../../htmlExamples/SwMix2/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix2/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
+            'muxRoute': '../../htmlExamples/SwMix2/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
         }
     },
     swMix3= {
         'name': 'swMix3',
         'status':{
-            'firstAdcRoute': './htmlExamples/SwMix3/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': './htmlExamples/SwMix3/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': './htmlExamples/SwMix3/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+            'firstAdcRoute': '../../htmlExamples/SwMix3/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix3/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
+            'muxRoute': '../../htmlExamples/SwMix3/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
         }
     },
     swMix4= {
         'name': 'swMix4',
         'status':{
-            'firstAdcRoute': './htmlExamples/SwMix4/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': './htmlExamples/SwMix4/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': './htmlExamples/SwMix4/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+            'firstAdcRoute': '../../htmlExamples/SwMix4/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix4/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
+            'muxRoute': '../../htmlExamples/SwMix4/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
         }
     },
     swMix5= {
         'name': 'swMix5',
         'status':{
-            'firstAdcRoute': './htmlExamples/SwMix5/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': './htmlExamples/SwMix5/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': './htmlExamples/SwMix5/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+            'firstAdcRoute': '../../htmlExamples/SwMix5/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix5/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
+            'muxRoute': '../../htmlExamples/SwMix5/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
         }
     },
     swMix6= {
         'name': 'swMix6',
         'status':{
-            'firstAdcRoute': './htmlExamples/SwMix6/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': './htmlExamples/SwMix6/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': './htmlExamples/SwMix6/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+            'firstAdcRoute': '../../htmlExamples/SwMix6/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix6/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
+            'muxRoute': '../../htmlExamples/SwMix6/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
         }
     }
 ]
