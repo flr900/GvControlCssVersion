@@ -182,6 +182,8 @@
     max-height: 447px;
     gap: 50px;
 
+    overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,10 +222,12 @@
     background-color: #CEFF1A;
   }
 
-  .itemsCardContainerList{
+   .itemsCardContainerList{
     margin-top: 80px;
     display: flex;
     flex-direction: row;
+
+    overflow-x: hidden;
 
     gap: 30px;
     color: #fff;
@@ -266,8 +270,8 @@
       gap: 0px;
       margin-top: 15px;
       width:100%;
-      overflow: scroll;
-      /* font-size: 2.5rem;  */
+      overflow-y: scroll;
+      overflow-x: none;
     }
 
     .containerItemList{
@@ -294,7 +298,8 @@
 
       height: 72.08%;
       max-height: 447px;
-      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: none;
     }
 
     .navMainCard{

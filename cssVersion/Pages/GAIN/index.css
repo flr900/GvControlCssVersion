@@ -13,7 +13,7 @@
     text-decoration: none;
   }
   html{
-    font-size: max(10px, 0.52vw);
+    font-size: min(10px, 0.52vw);
   }
   body{
     font-family: 'Roboto Condensed';
@@ -179,8 +179,8 @@
   #mainCardContent{
     width:89.92%;
     max-width: 1366px;
-    height: 62.08%;
-    max-height: 447px;
+    height: 72.08%;
+    max-height: 470px;
     
     display: flex;
     flex-direction: row;
@@ -188,7 +188,7 @@
     overflow-y: hidden;
     overflow-x: scroll;
 
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 
     border-radius: 20px;
@@ -197,27 +197,27 @@
   }
 
   #mainCardContent::-webkit-scrollbar{
-    height: 80px;
+    height: 8px;
   }
 
-  /* #mainCardContent::-webkit-scrollbar-track {
-    background-color: #b5c0c4;
+  #mainCardContent::-webkit-scrollbar-track {
+    background-color:#CFCFCD;
     width: 200px;
     border-radius: 20px;
-  } */
+  }
 
 
   #mainCardContent::-webkit-scrollbar-thumb {
-    background-color: #ff1a1a;
-    height: 80px;
-    width: 50px;
+    background-color:#1282A2;
+    width: 20px;
     border-radius: 20px;
   }
 
   .channelActuator{
-    max-width: 350px;
-    width: 100%;
-    height: max-content;
+    max-width: 340px;
+    width: 25%;
+    max-height: 240px;
+    height: 53.40%;
 
     display: flex;
     flex-direction: column;
@@ -226,7 +226,8 @@
 
     align-items: flex-start;
     justify-content: flex-start;
-
+    
+    margin-top: 4.25%;
 
     align-items: center;
   }
@@ -237,8 +238,9 @@
     justify-content: center;
 
     max-width: 240px;
-    width: 100%;
-    min-height: 64px;
+    width: 70.58%;
+    max-height: 64px;
+    height: 20.61%;
 
     /* margin-top: 40px; */
 
@@ -255,20 +257,19 @@
     position: relative;
 
     align-items: center;
-    width:100%;
-    height:100%;
-    max-width: 179px;
-    max-height: 251px;
+    width:73.82%;
+    /* max-width: 179px;
+    max-height: 251px; */
   }
 
 .sliderWrapper{
     position: absolute;
     align-items: center;
     justify-content: end;
-    max-height: 28px;
-    max-width: 251px;
+    /* max-height: 28px;
+    max-width: 251px; */
     width:100%;
-    height:100%;
+    height:15.15%;
     left: 62px;
     transform: rotate(-90deg);
 }
@@ -282,7 +283,7 @@
 .tick{
     position: relative;
     justify-content: center;
-    left: 86.90%;
+    left: 78.90%;
 }
 
 .marker{
@@ -386,8 +387,8 @@ input[type="range"]:focus{
 
 input.slider{
     background: linear-gradient(to right, #1282A2 0%, #1282A2 50%, #CEFF1A 50%, #CEFF1A 100%);
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 25px;
     cursor:"pointer";
     -webkit-appearance: none;
     border-radius: 40px;
@@ -396,8 +397,8 @@ input.slider{
 input[type=range]::-webkit-slider-thumb {
     border: none;
     box-shadow: none;
-    height: 28px;
-    width: 38px;
+    height: 25px;
+    width:  38px;
     border-radius: 20px; 
     background: #1282A2;
     -webkit-appearance: none;
@@ -473,10 +474,9 @@ input[type="range"]::after{
       margin-top: 15px;
     }
     #mainCardContent{
-
+      align-items: flex-start;
       height: 72.08%;
       max-height: 447px;
-      overflow: scroll;
     }
 
     .navMainCard{
