@@ -188,7 +188,7 @@
     overflow-y: hidden;
     overflow-x: scroll;
 
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
 
     border-radius: 20px;
@@ -196,20 +196,36 @@
 
   }
 
+  #mainCardContent::-webkit-scrollbar{
+    height: 80px;
+  }
+
+  /* #mainCardContent::-webkit-scrollbar-track {
+    background-color: #b5c0c4;
+    width: 200px;
+    border-radius: 20px;
+  } */
+
+  #mainCardActuator::-webkit-scrollbar-thumb {
+    background-color: #ff1a1a;
+    height: 80px;
+    width: 50px;
+    border-radius: 20px;
+  }
 
   .channelActuator{
     max-width: 350px;
     width: 100%;
-    height: 100%;
+    height: max-content;
 
     display: flex;
     flex-direction: column;
-    gap:45px;
+    gap:69px;
+    flex: none;
 
     align-items: flex-start;
     justify-content: flex-start;
 
-    margin-top: 13px;
 
     align-items: center;
   }
@@ -235,7 +251,7 @@
     display: flex;
     flex-direction: row;
 
-    /* position: relative; */
+    position: relative;
 
     align-items: center;
     width:100%;
@@ -252,7 +268,7 @@
     max-width: 251px;
     width:100%;
     height:100%;
-    margin-left: 15px;
+    left: 62px;
     transform: rotate(-90deg);
 }
 
