@@ -64,7 +64,7 @@ function onLoadStatusPage (){
 
 function selectedAsideButton (button) {
     cacheLastButton.removeAttribute('style')
-    cacheLastButton = button
+    cacheLastButton = buttoncommi
     button.setAttribute('style', 'color:#2B2D42; background-color:#CEFF1A')
     const selectedValue = button.getAttribute('value')
     selectedEquipament = swmixRoutes.find(equipamentRoutes => equipamentRoutes.name == selectedValue  )
