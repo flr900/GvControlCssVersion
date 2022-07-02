@@ -206,7 +206,8 @@
     border-radius: 20px;
   } */
 
-  #mainCardActuator::-webkit-scrollbar-thumb {
+
+  #mainCardContent::-webkit-scrollbar-thumb {
     background-color: #ff1a1a;
     height: 80px;
     width: 50px;
