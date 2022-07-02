@@ -7,7 +7,7 @@
     <title>GvControl</title>
     <link rel="stylesheet" href="./index.css">
 </head>
-<body>
+<body onload="onLoadStatusPage()">
     <header>
         <img src="../img/globoLogo.png" alt="logo" class="logoImg">
         <span>GV CONTROL DC1</span>
@@ -15,32 +15,32 @@
 
     <div class="container">
         <aside class="navAside" >
-            <div class="navAsideCard">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix1" tabindex="-1">
                 <span>
                     SW MIX 1
                 </span>
             </div>
-            <div class="navAsideCard">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix2" tabindex="-1">
                 <span>
                     SW MIX 2
                 </span>
             </div>
-            <div class="navAsideCard">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix3" tabindex="-1">
                 <span>
                     SW MIX 3
                 </span>
             </div>
-            <div class="navAsideCard">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix4" tabindex="-1">
                 <span>
                     SW MIX 4
                 </span>
             </div>
-            <div class="navAsideCard">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix5" tabindex="-1"> 
                 <span>
                     SW MIX 5
                 </span>
             </div>
-            <div class="navAsideCard">
+            <div class="navAsideCard" onclick="selectedAsideButton(this)" value="swMix6" tabindex="-1">
                 <span>
                     SW MIX 6
                 </span>
@@ -55,12 +55,12 @@
                 </div>
                 <div class="navMainCardSelector" id="gainCard">
                     <span>
-                        AUDIO GAIN
+                        GAIN
                     </span>
                 </div>
                 <div class="navMainCardSelector" id="delayCard">
                     <span>
-                        AUDIO DELAY
+                        DELAY
                     </span>
                 </div>
                 <div class="navMainCardSelector" id="bwayCard">
@@ -75,22 +75,42 @@
                         <span>PRESENCE ADC</span> 
                     </div>
                     <div class="itemsCardContainerList" id="leftContainerList">
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN1</span>
-                        </div> 
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN2</span>
-                        </div> 
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN3</span>
-                        </div> 
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN4</span>
-                        </div> 
+                        <div id="firstAdc">
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN1</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN2</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN3</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN4</span>
+                            </div> 
+                        </div>
+                        <div id="lastAdc">
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN1</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN2</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN3</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN4</span>
+                            </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="CardContainer" id="rightMainCardContainer">
@@ -98,26 +118,46 @@
                         <span>PRESENCE MUX</span> 
                     </div>
                     <div class="itemsCardContainerList" id="leftContainerList">
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>VIDEO</span>
-                        </div> 
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN1</span>
-                        </div> 
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN2</span>
-                        </div> 
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN3</span>
-                        </div> 
-                        <div class="containerItemList">
-                            <div class="circle"></div>
-                            <span>AUDIO IN4</span>
-                        </div> 
+                        <div class="leftcontainer">
+                            <div class="containerItemList" id="videoCard">
+                                <div class="circle"></div>
+                                <span>VIDEO</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN1</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN2</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN3</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN4</span>
+                            </div> 
+                        </div>
+                        <div class="rightcontainer">
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN1</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN2</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN3</span>
+                            </div> 
+                            <div class="containerItemList">
+                                <div class="circle"></div>
+                                <span>AUDIO IN4</span>
+                            </div> 
+                        </div>
                     </div>
                 </div>
             </div>
