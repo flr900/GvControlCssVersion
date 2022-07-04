@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STATUS</title>
+    <title>DELAY</title>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body onload="onLoadStatusPage()">
@@ -72,98 +72,207 @@
                 </a>
             </div>
             <div id="mainCardContent">
-                <div class="CardContainer" id="leftMainCardContainer">
-                    <div class="CardContainerHeader"> 
-                        <span>PRESENCE ADC</span> 
-                    </div>
-                    <div class="itemsCardContainerList" id="leftContainerList">
-                        <div id="firstAdc">
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN1</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN2</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN3</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN4</span>
-                            </div> 
+                <div class="channelActuator" id="channel1">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 1
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader1" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader1Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader1" onclick="stepDown(this.attributes)" class="arrowDown">
                         </div>
-                        <div id="lastAdc">
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN1</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN2</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN3</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN4</span>
-                            </div> 
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader1" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader1" id="fader1" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
                         </div>
-                    </div>
+                    </div>             
                 </div>
-                <div class="CardContainer" id="rightMainCardContainer">
-                    <div class="CardContainerHeader"> 
-                        <span>PRESENCE MUX</span> 
-                    </div>
-                    <div class="itemsCardContainerList" id="leftContainerList">
-                        <div class="leftcontainer">
-                            <div class="containerItemList" id="videoCard">
-                                <div class="circle"></div>
-                                <span>VIDEO</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN1</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN2</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN3</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN4</span>
-                            </div> 
+                <div class="channelActuator" id="channel2">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 2
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader2" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader2Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader2" onclick="stepDown(this.attributes)" class="arrowDown">
                         </div>
-                        <div class="rightcontainer">
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN1</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN2</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN3</span>
-                            </div> 
-                            <div class="containerItemList">
-                                <div class="circle"></div>
-                                <span>AUDIO IN4</span>
-                            </div> 
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader2" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader2" id="fader2" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
                         </div>
-                    </div>
+                    </div>             
+                </div>
+                <div class="channelActuator" id="channel3">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 3
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader3" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader3Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader3" onclick="stepDown(this.attributes)" class="arrowDown">
+                        </div>
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader3" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader3" id="fader3" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
+                        </div>
+                    </div>             
+                </div>
+                <div class="channelActuator" id="channel4">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 4
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader4" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader4Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader4" onclick="stepDown(this.attributes)" class="arrowDown">
+                        </div>
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader4" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader4" id="fader4" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
+                        </div>
+                    </div>             
+                </div>
+                <div class="channelActuator" id="channel5">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 5
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader5" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader5Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader5" onclick="stepDown(this.attributes)" class="arrowDown">
+                        </div>
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader5" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader5" id="fader5" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
+                        </div>
+                    </div>             
+                </div>
+                <div class="channelActuator" id="channel6">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 6
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader6" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader6Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader6" onclick="stepDown(this.attributes)" class="arrowDown">
+                        </div>
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader6" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader6" id="fader6" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
+                        </div>
+                    </div>             
+                </div>
+                <div class="channelActuator" id="channel7">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 7
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader7" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader7Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader7" onclick="stepDown(this.attributes)" class="arrowDown">
+                        </div>
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader7" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader7" id="fader7" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
+                        </div>
+                    </div>             
+                </div>
+                <div class="channelActuator" id="channel8">
+                    <div class="channelHeader">
+                        <span>
+                            CANAL 8
+                        </span>
+                    </div>   
+                    <div class="sliderBundler">
+                        <div class="sliderSelector">
+                            <img src="../../Icons/Arrow.png" alt="Seta para cima" name="fader8" onclick="stepUp(this.attributes)" class="arrowUp">
+                            <div class="sliderValueWrapper">
+                                <input type="number" class="sliderTextValue" id="fader8Text" min="0.0" max="5460" step="1" value="0.0"></input>
+                                <span class="valueText">ms</span>
+                            </div>
+                            <img src="../../Icons/Arrow.png" alt="Seta para baixo" name="fader8" onclick="stepDown(this.attributes)" class="arrowDown">
+                        </div>
+                        <div class="sliderWrapper">
+                            <div class="tickmarks">
+                                <div class="tick">
+                                    <div class="marker" name="fader8" value="0.0" onclick="setValueSlider(this.attributes)"></div>
+                                </div>
+                            </div>
+                        <input class="slider" type="range" name="fader8" id="fader8" min="0.0" max="5460" step="1" orient="vertical" value="0.0">
+                        </div>
+                    </div>             
                 </div>
             </div>
-        </div> 
     </div>
 </body>
 <script src="./index.js"></script>
