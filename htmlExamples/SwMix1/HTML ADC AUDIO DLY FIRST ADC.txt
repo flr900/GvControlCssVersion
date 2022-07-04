@@ -266,7 +266,7 @@ Delay (mS)</td></tr>
 <tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
 </td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
 </td>
-<td align="center"><input type="text" name="PID262471" size="10" maxlength="12" value="0"></td>
+<td align="center"><input type="text" name="PID262471" size="10" maxlength="12" value="100"></td>
 <td align="center" ><input type="submit" name="OPSet" value="*"></td>
 <td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
 <td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">

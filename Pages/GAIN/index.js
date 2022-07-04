@@ -44,7 +44,7 @@ const swmixRoutes = [
     }
 ]
 
-const AdcInfo = [
+const AdcInfoGain = [
     channel1= {id: "PID65906"},
     channel2= {id: "PID131442"},
     channel3= {id: "PID196978"},
@@ -90,7 +90,7 @@ async function refreshGainInfo(){
         const parser = new DOMParser()
         const htmlToParse = parser.parseFromString(res,'text/html')
         for(var i = 0; i < 4; i++){   
-            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfo[i].id}"]`)[0].value) 
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoGain[i].id}"]`)[0].value) 
         }
     })
 
@@ -101,7 +101,7 @@ async function refreshGainInfo(){
         const parser = new DOMParser()
         const htmlToParse = parser.parseFromString(res,'text/html')
         for(var i = 0; i < 4; i++){   
-            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfo[i].id}"]`)[0].value) 
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoGain[i].id}"]`)[0].value) 
         }
     })
     for (var i = 0; i < sliders.length; i++){
@@ -173,4 +173,4 @@ function handleWheelEvent(event){
         stepDown(event.target.attributes)
     }
 }
-// setInterval(refreshStatusInfo, 3000)
+setInterval(refreshGainInfo, 3000)

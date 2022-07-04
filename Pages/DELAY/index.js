@@ -44,15 +44,15 @@ const swmixRoutes = [
     }
 ]
 
-const AdcInfo = [
-    channel1= {id: "PID65906"},
-    channel2= {id: "PID131442"},
-    channel3= {id: "PID196978"},
-    channel4= {id: "PID262514"},
-    channel5= {id: "PID65906"},
-    channel6= {id: "PID131442"},
-    channel7= {id: "PID196978"},
-    channel8= {id: "PID262514"}
+const AdcInfoDly = [
+    channel1= {id: "PID65863"},
+    channel2= {id: "PID131399"},
+    channel3= {id: "PID196935"},
+    channel4= {id: "PID262471"},
+    channel5= {id: "PID65863"},
+    channel6= {id: "PID131399"},
+    channel7= {id: "PID196935"},
+    channel8= {id: "PID262471"}
 ]
 
 var selectedEquipament
@@ -74,10 +74,10 @@ function selectedAsideButton (button) {
     const selectedValue = button.getAttribute('value')
     selectedEquipament = swmixRoutes.find(equipamentRoutes => equipamentRoutes.name == selectedValue  )
     
-    refreshGainInfo()
+    refreshDlyInfo()
 }
 
-async function refreshGainInfo(){  
+async function refreshDlyInfo(){  
     const pageTextGainValue = document.querySelectorAll('.sliderTextValue')
     const sliders = document.querySelectorAll('input.slider')
 
@@ -90,7 +90,7 @@ async function refreshGainInfo(){
         const parser = new DOMParser()
         const htmlToParse = parser.parseFromString(res,'text/html')
         for(var i = 0; i < 4; i++){   
-            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfo[i].id}"]`)[0].value) 
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoDly[i].id}"]`)[0].value) 
         }
     })
 
@@ -101,7 +101,7 @@ async function refreshGainInfo(){
         const parser = new DOMParser()
         const htmlToParse = parser.parseFromString(res,'text/html')
         for(var i = 0; i < 4; i++){   
-            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfo[i].id}"]`)[0].value) 
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoDly[i].id}"]`)[0].value) 
         }
     })
     for (var i = 0; i < sliders.length; i++){
@@ -173,4 +173,4 @@ function handleWheelEvent(event){
         stepDown(event.target.attributes)
     }
 }
-// setInterval(refreshStatusInfo, 3000)
+setInterval(refreshDlyInfo, 3000)
