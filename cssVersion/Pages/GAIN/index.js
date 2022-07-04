@@ -44,6 +44,17 @@ const swmixRoutes = [
     }
 ]
 
+const AdcInfo = [
+    channel1= {id: "PID65906"},
+    channel2= {id: "PID131442"},
+    channel3= {id: "PID196978"},
+    channel4= {id: "PID262514"},
+    channel5= {id: "PID65906"},
+    channel6= {id: "PID131442"},
+    channel7= {id: "PID196978"},
+    channel8= {id: "PID262514"}
+]
+
 var selectedEquipament
 var cacheLastButton
 
@@ -62,61 +73,44 @@ function selectedAsideButton (button) {
     button.setAttribute('style', 'color:#2B2D42; background-color:#CEFF1A')
     const selectedValue = button.getAttribute('value')
     selectedEquipament = swmixRoutes.find(equipamentRoutes => equipamentRoutes.name == selectedValue  )
+    
     refreshGainInfo()
 }
 
 async function refreshGainInfo(){  
-    const TextValueAdcGain = document.querySelectorAll('.sliderTextValue')
-    
-    const firstAdcGain = []
+    const pageTextGainValue = document.querySelectorAll('.sliderTextValue')
+    const sliders = document.querySelectorAll('input.slider')
+
+    const getGainValue = []
     
     //GET FIRST ADC Gain //
-
-    await fetch(selectedEquipament.Gain.firstAdcRoute).then(res =>  {
+    await fetch(selectedEquipament.gain.firstAdcRoute).then(res =>  {
         return res.text()
     }).then( res => {
-        console.log(res)
-        // const parser = new DOMParser()
-        // const htmlToParse = parser.parseFromString(res,'text/html')
-        
-        // const initialParseGain = htmlToParse.querySelectorAll('table')
-
-        // const presenceParseGain = initialParseGain[4].children[0].children[2]
-
-        
-        // const parsedPresence = presenceParseGain.querySelectorAll('font')
-
-        //  parsedPresence.forEach(channel => {
-        //      firstAdcGain.push(channel.innerHTML)
-        // })
-        
+        const parser = new DOMParser()
+        const htmlToParse = parser.parseFromString(res,'text/html')
+        for(var i = 0; i < 4; i++){   
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfo[i].id}"]`)[0].value) 
+        }
     })
 
-    // //GET LAST ADC GAIN //
-    // await fetch(selectedEquipament.status.lastAdcRoute).then(res =>  {
-    //     return res.text()
-    // }).then( res => {
-    //     const parser = new DOMParser()
-    //     const htmlToParse = parser.parseFromString(res,'text/html')
-        
-    //     const initialParseStatus = htmlToParse.querySelectorAll('table')
-
-    //     const presenceParseStatus = initialParseStatus[4].children[0].children[2]
-
-        
-    //     const parsedPresence = presenceParseStatus.querySelectorAll('font')
-
-    //      parsedPresence.forEach(channel => {
-    //          lastAdcStatus.push(channel.innerHTML)
-    //     })
-        
-    // })
-    
-
-   
-     
-    
+    //GET LAST ADC GAIN //
+    await fetch(selectedEquipament.gain.lastAdcRoute).then(res =>  {
+        return res.text()
+    }).then( res => {
+        const parser = new DOMParser()
+        const htmlToParse = parser.parseFromString(res,'text/html')
+        for(var i = 0; i < 4; i++){   
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfo[i].id}"]`)[0].value) 
+        }
+    })
+    for (var i = 0; i < sliders.length; i++){
+        sliders[i].value = getGainValue[i]
+        progressTrack(sliders[i])
+     }
 }
+
+// HANDLE WHEEL EVENTS //
 
 const slider = document.getElementById("fader1");
 const arrowUp = document.getElementById("arrowUp");
@@ -131,7 +125,6 @@ sliders.forEach(slider => {
 })
 
 function progressTrack(sliderElement) {
-    
     const{min,max,value, id} = sliderElement
 
     const sliderTextValue = document.getElementById(`${id}Text`);

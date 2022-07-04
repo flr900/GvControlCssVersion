@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"><html>
-<head> <META http-equiv="pragma" content="no-cache"><META http-equiv="expires" content="-1"><title>Analog Audio Inputs</title>
+<head> <META http-equiv="pragma" content="no-cache"><META http-equiv="expires" content="-1"><title>Audio Proc</title>
 <meta http-equiv="content-typ" content="text/html;charset=iso-8859-1"><SCRIPT LANGUAGE="JavaScript">
 function delEditBox(theForm, a ){
 for(var i = 0; i < theForm.length; i++) {
@@ -79,7 +79,7 @@ return false }
 <body bgcolor="#ffffff" style="margin-left:10" >
 <left><basefont face="Arial">
 <table border="0" cellpadding="0" cellspacing="0"><tr><td><a href="/frame/slot_9/devstatus.htm" target="device" ><img src="/images/WARNled.gif" alt="Slot Status: WARN" border="0" hspace="0" vspace="0" ></a>
-</td><td><table><tr><td><font face="ARIAL"><font size = +1><b>Analog Audio Inputs</b></font></td><td valign="middle"><a href="cntanalog_audio_inputs.htm" target="page"><img src="/images/refresh.gif" alt="refresh page" border="0" hspace="0" vspace="0"></a>
+</td><td><table><tr><td><font face="ARIAL"><font size = +1><b>Audio Proc</b></font></td><td valign="middle"><a href="cntaudio_proc.htm" target="page"><img src="/images/refresh.gif" alt="refresh page" border="0" hspace="0" vspace="0"></a>
 </font></font></td/></tr></table></td>
 </tr>
 </table>
@@ -93,179 +93,219 @@ Description: <font color="#0000FF">4 Chan Aud ADC/Trk/D</font>
 </tr>
 </table>
 Last Recalled E-MEM: <font color="#0000FF">-</font> 
-<table   ><tr  ><td  colspan="3" ><table  border="1"  ><tr align="center"  ><td  align="right" >Connector
+<table   ><tr  ><td  colspan="3" ><table  border="1"  ><tr align="center"  ><td ></td>
+<td  colspan="2" ><b >AES 1
+</b></td>
+<td  colspan="2" ><b >AES 2
+</b></td>
+</tr>
+<tr align="center"  ><td  align="right" >Channel
 </td>
-<td  >J7
+<td  >A
 </td>
-<td  >J8
+<td  >B
 </td>
-<td  >J9
+<td  >C
 </td>
-<td  >J10
+<td  >D
 </td>
 </tr>
-<tr align="center"  ><td  align="right" >Function
+<tr align="center"  ><td  align="right" >Selection
 </td>
-<td  >Audio In 1
+<td  ><font color="#0000FF">Audio In 1</font> 
 </td>
-<td  >Audio In 2
+<td  ><font color="#0000FF">Audio In 2</font> 
 </td>
-<td  >Audio In 3
+<td  ><font color="#0000FF">Audio In 3</font> 
 </td>
-<td  >Audio In 4
-</td>
-</tr>
-<tr align="center"  ><td  align="right" >Presence
-</td>
-<td  ><font color="#0000FF">False</font> 
-</td>
-<td  ><font color="#0000FF">False</font> 
-</td>
-<td  ><font color="#0000FF">False</font> 
-</td>
-<td  ><font color="#0000FF">False</font> 
+<td  ><font color="#0000FF">Audio In 4</font> 
 </td>
 </tr>
-<tr align="center"  ><td  align="right" >Clip
-</td>
-<td  ><font color="#0000FF">False</font> 
-</td>
-<td  ><font color="#0000FF">False</font> 
-</td>
-<td  ><font color="#0000FF">False</font> 
-</td>
-<td  ><font color="#0000FF">False</font> 
-</td>
-</tr>
-<tr align="center"  ><td  align="right" >Max Input Locking
+<tr align="center"  ><td  align="right" >Processing
 </td>
 <td  colspan="2" ><table><tr>
 <td valign=top>
-<form enctype="multipart/form-data"method= "post" action ="cntanalog_audio_inputs.htm">
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_proc.htm">
 <input type="hidden"  name="PlaceHolder" value="holder">
 <input type="hidden"  name="Type" value="RecordTable">
 <input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
-<input type="hidden" name="URL" value="cntanalog_audio_inputs.htm" >
-<input type="checkbox" name="PID65913" value="ENUMINT(0)" onClick="this.form.submit()">Locked</td><td>
+<input type="hidden" name="URL" value="cntaudio_proc.htm" >
+<select name="PID65897" onChange="this.form.submit()"><option selected value="A, B" >A, B<option value="-A, -B" >-A, -B<option value="-A, B" >-A, B<option value="A, -B" >A, -B<option value="A+B" >A+B<option value="A+B, A-B" >A+B, A-B<option value="-(A+B)" >-(A+B)<option value="1 kHz" >1 kHz<option value="400 Hz" >400 Hz<option value="Silence" >Silence<option value="A+B, C" >A+B, C<option value="A+B, D" >A+B, D<option value="A/B ID" >A/B ID</select></td><td>
  </form></td></tr></table>
 
 </td>
 <td  colspan="2" ><table><tr>
 <td valign=top>
-<form enctype="multipart/form-data"method= "post" action ="cntanalog_audio_inputs.htm">
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_proc.htm">
 <input type="hidden"  name="PlaceHolder" value="holder">
 <input type="hidden"  name="Type" value="RecordTable">
 <input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
-<input type="hidden" name="URL" value="cntanalog_audio_inputs.htm" >
-<input type="checkbox" name="PID131449" value="ENUMINT(0)" onClick="this.form.submit()">Locked</td><td>
+<input type="hidden" name="URL" value="cntaudio_proc.htm" >
+<select name="PID131433" onChange="this.form.submit()"><option selected value="C, D" >C, D<option value="-C, -D" >-C, -D<option value="-C, D" >-C, D<option value="C, -D" >C, -D<option value="C+D" >C+D<option value="C+D, C-D" >C+D, C-D<option value="-(C+D)" >-(C+D)<option value="1 kHz" >1 kHz<option value="400 Hz" >400 Hz<option value="Silence" >Silence<option value="C/D ID" >C/D ID</select></td><td>
  </form></td></tr></table>
 
 </td>
 </tr>
-<tr align="center"  ><td  align="right" >Max Input Levels
+<tr align="center"  ><td  align="right" >AES output<br>resolution
 </td>
-<td  ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntanalog_audio_inputs.htm">
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_proc.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
 <input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
-<input type="hidden" name="URL" value="cntanalog_audio_inputs.htm">
-Max Input Level (dBu)</td></tr>
+<input type="hidden" name="URL" value="cntaudio_proc.htm" >
+
+<input type="radio" name="PID66447" value="ENUMINT(0)" onClick="this.form.submit()">20 bit
+<input type="radio" name="PID66447" value="ENUMINT(1)" checked>24 bit</td><td>
+ </form></td></tr></table>
+
+</td>
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_proc.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_proc.htm" >
+
+<input type="radio" name="PID131983" value="ENUMINT(0)" onClick="this.form.submit()">20 bit
+<input type="radio" name="PID131983" value="ENUMINT(1)" checked>24 bit</td><td>
+ </form></td></tr></table>
+
+</td>
+</tr>
+<tr align="center"  ><td  align="right" >Gain Locking
+</td>
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_proc.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_proc.htm" >
+<input type="checkbox" name="PID65905" value="ENUMINT(0)" onClick="this.form.submit()">Locked</td><td>
+ </form></td></tr></table>
+
+</td>
+<td  colspan="2" ><table><tr>
+<td valign=top>
+<form enctype="multipart/form-data"method= "post" action ="cntaudio_proc.htm">
+<input type="hidden"  name="PlaceHolder" value="holder">
+<input type="hidden"  name="Type" value="RecordTable">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_proc.htm" >
+<input type="checkbox" name="PID131441" value="ENUMINT(0)" onClick="this.form.submit()">Locked</td><td>
+ </form></td></tr></table>
+
+</td>
+</tr>
+<tr  ><td  align="right" >Gain
+</td>
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_proc.htm">
+<input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
+<input type="hidden" name="URL" value="cntaudio_proc.htm">
+Gain (dB)</td></tr>
 <tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
 </td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
 </td>
-<td align="center"><input type="text" name="PID65677" size="10" maxlength="12" value="24.0"></td>
+<td align="center"><input type="text" name="PID65906" size="10" maxlength="12" value="-0.3"></td>
 <td align="center" ><input type="submit" name="OPSet" value="*"></td>
 <td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
 <td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
 </td></tr>
-<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
-<td colspan=4 ><table width=132 height=24 ><tr><td width=80% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
+<tr><td align="left"><input type="submit" name="OPSCALE-39.8.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td width=86% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
 </td>
-<td align="right" ><input type="submit" name="OPSCALE30.x" value=" &gt;|" >
-<input type=hidden name=UNITS value=dBu><input type=hidden name=MODE value=unitsMode ></td></form>
+<td align="right" ><input type="submit" name="OPSCALE6.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=dB><input type=hidden name=MODE value=unitsMode ></td></form>
 </tr>
 </table>
 </td></tr></table>
 
 </td>
-<td  ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntanalog_audio_inputs.htm">
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_proc.htm">
 <input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
-<input type="hidden" name="URL" value="cntanalog_audio_inputs.htm">
-Max Input Level (dBu)</td></tr>
+<input type="hidden" name="URL" value="cntaudio_proc.htm">
+Gain (dB)</td></tr>
 <tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
 </td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
 </td>
-<td align="center"><input type="text" name="PID131213" size="10" maxlength="12" value="24.0"></td>
+<td align="center"><input type="text" name="PID131442" size="10" maxlength="12" value="-0.1"></td>
 <td align="center" ><input type="submit" name="OPSet" value="*"></td>
 <td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
 <td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
 </td></tr>
-<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
-<td colspan=4 ><table width=132 height=24 ><tr><td width=80% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
+<tr><td align="left"><input type="submit" name="OPSCALE-39.8.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td width=86% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
 </td>
-<td align="right" ><input type="submit" name="OPSCALE30.x" value=" &gt;|" >
-<input type=hidden name=UNITS value=dBu><input type=hidden name=MODE value=unitsMode ></td></form>
+<td align="right" ><input type="submit" name="OPSCALE6.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=dB><input type=hidden name=MODE value=unitsMode ></td></form>
 </tr>
 </table>
 </td></tr></table>
 
 </td>
-<td  ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntanalog_audio_inputs.htm">
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_proc.htm">
 <input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
-<input type="hidden" name="URL" value="cntanalog_audio_inputs.htm">
-Max Input Level (dBu)</td></tr>
+<input type="hidden" name="URL" value="cntaudio_proc.htm">
+Gain (dB)</td></tr>
 <tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
 </td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
 </td>
-<td align="center"><input type="text" name="PID196749" size="10" maxlength="12" value="24.0"></td>
+<td align="center"><input type="text" name="PID196978" size="10" maxlength="12" value="-0.1"></td>
 <td align="center" ><input type="submit" name="OPSet" value="*"></td>
 <td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
 <td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
 </td></tr>
-<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
-<td colspan=4 ><table width=132 height=24 ><tr><td width=80% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
+<tr><td align="left"><input type="submit" name="OPSCALE-39.8.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td width=86% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
 </td>
-<td align="right" ><input type="submit" name="OPSCALE30.x" value=" &gt;|" >
-<input type=hidden name=UNITS value=dBu><input type=hidden name=MODE value=unitsMode ></td></form>
+<td align="right" ><input type="submit" name="OPSCALE6.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=dB><input type=hidden name=MODE value=unitsMode ></td></form>
 </tr>
 </table>
 </td></tr></table>
 
 </td>
-<td  ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntanalog_audio_inputs.htm">
+<td ><table border=0 ><tr align="center" ><td><form method= "get" action ="cntaudio_proc.htm">
 <input type="hidden"  name="DID" value="1.9"><input type="hidden"  name="MID" value="4" >
-<input type="hidden" name="URL" value="cntanalog_audio_inputs.htm">
-Max Input Level (dBu)</td></tr>
+<input type="hidden" name="URL" value="cntaudio_proc.htm">
+Gain (dB)</td></tr>
 <tr><td align="center"><table border=0 cellpadding="0" cellspacing="0"><tr><td align="left" ><input type="submit" name="OPcDec" value="&lt;&lt;">
 </td><td align="left"><input type="submit" name="OPfDec" value="&lt;">
 </td>
-<td align="center"><input type="text" name="PID262285" size="10" maxlength="12" value="24.0"></td>
+<td align="center"><input type="text" name="PID262514" size="10" maxlength="12" value="0.0"></td>
 <td align="center" ><input type="submit" name="OPSet" value="*"></td>
 <td align="right"><input type="submit" name="OPfInc" value="&gt;"></td>
 <td align="right"><input type="submit"  name="OPcInc" value="&gt;&gt;">
 </td></tr>
-<tr><td align="left"><input type="submit" name="OPSCALE0.x" value="|&lt; " ></td>
-<td colspan=4 ><table width=132 height=24 ><tr><td width=80% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
+<tr><td align="left"><input type="submit" name="OPSCALE-39.8.x" value="|&lt; " ></td>
+<td colspan=4 ><table width=132 height=24 ><tr><td width=86% bgcolor="#009A9C" ></td><td bgcolor="#C6C3C6"></td></tr></table>
 </td>
-<td align="right" ><input type="submit" name="OPSCALE30.x" value=" &gt;|" >
-<input type=hidden name=UNITS value=dBu><input type=hidden name=MODE value=unitsMode ></td></form>
+<td align="right" ><input type="submit" name="OPSCALE6.x" value=" &gt;|" >
+<input type=hidden name=UNITS value=dB><input type=hidden name=MODE value=unitsMode ></td></form>
 </tr>
 </table>
 </td></tr></table>
 
 </td>
 </tr>
+<tr  ><td  align="right" >Output Sample Rate
+</td>
+<td  align="center" colspan="4" ><font color="#0000FF">48kHz</font> 
+</td>
+</tr>
 </table>
 </td>
 </tr>
-<tr  ><td  align="left" colspan="3" >Note: Presence =&gt; -40 dBFS, Clip =&gt; -0.5 dBFS
-</td>
-</tr>
-<tr  ><td  align="left" ><a href="/frame/slot_9/cntaudio_proc.htm" target="page" >Back
+<tr  ><td  align="left" ><a href="/frame/slot_9/cntaudio_delay.htm" target="page" >Back
 </a>
 </td>
 <td  align="center" ><a href="/frame/slot_9/cntfunctional_view.htm" target="page" >Functional View
 </a>
 </td>
-<td  align="right" ><a href="/frame/slot_9/cntaudio_channel_pairing.htm" target="page" >Next
+<td  align="right" ><a href="/frame/slot_9/cntanalog_audio_inputs.htm" target="page" >Next
 </a>
 </td>
 </tr>

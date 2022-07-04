@@ -13,7 +13,7 @@
     text-decoration: none;
   }
   html{
-    font-size: max(10px, 0.52vw);
+    font-size: min(10px, 0.52vw);
   }
   body{
     font-family: 'Roboto Condensed';
