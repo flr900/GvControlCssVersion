@@ -2,52 +2,57 @@
 const swmixRoutes = [
     swMix1= {
         'name': 'swMix1',
-        'status':{
-            'firstAdcRoute': '../../htmlExamples/SwMix1/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix1/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': '../../htmlExamples/SwMix1/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+        'gain':{
+            'firstAdcRoute': '../../htmlExamples/SwMix1/HTML ADC AUDIO DLY FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix1/HTML ADC AUDIO DLY LAST ADC.txt',
         }
     },
     swMix2= {
         'name': 'swMix2',
-        'status':{
-            'firstAdcRoute': '../../htmlExamples/SwMix2/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix2/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': '../../htmlExamples/SwMix2/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+        'gain':{
+            'firstAdcRoute': '../../htmlExamples/SwMix2/HTML ADC AUDIO DLY FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix2/HTML ADC AUDIO DLY LAST ADC.txt',
         }
     },
     swMix3= {
         'name': 'swMix3',
-        'status':{
-            'firstAdcRoute': '../../htmlExamples/SwMix3/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix3/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': '../../htmlExamples/SwMix3/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+        'gain':{
+            'firstAdcRoute': '../../htmlExamples/SwMix3/HTML ADC AUDIO DLY FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix3/HTML ADC AUDIO DLY LAST ADC.txt',
         }
     },
     swMix4= {
         'name': 'swMix4',
-        'status':{
-            'firstAdcRoute': '../../htmlExamples/SwMix4/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix4/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': '../../htmlExamples/SwMix4/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+        'gain':{
+            'firstAdcRoute': '../../htmlExamples/SwMix4/HTML ADC AUDIO DLY FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix4/HTML ADC AUDIO DLY LAST ADC.txt',
         }
     },
     swMix5= {
         'name': 'swMix5',
-        'status':{
-            'firstAdcRoute': '../../htmlExamples/SwMix5/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix5/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': '../../htmlExamples/SwMix5/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+        'gain':{
+            'firstAdcRoute': '../../htmlExamples/SwMix5/HTML ADC AUDIO DLY FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix5/HTML ADC AUDIO DLY LAST ADC.txt',
         }
     },
     swMix6= {
         'name': 'swMix6',
-        'status':{
-            'firstAdcRoute': '../../htmlExamples/SwMix6/HTML ADC ANALOG AUDIO INPUT FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix6/HTML ADC ANALOG AUDIO INPUT LAST ADC.txt',
-            'muxRoute': '../../htmlExamples/SwMix6/HTML MUX AUDIO EMBEDDER (CANAL ANALOG).txt',
+        'gain':{
+            'firstAdcRoute': '../../htmlExamples/SwMix6/HTML ADC AUDIO DLY FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix6/HTML ADC AUDIO DLY LAST ADC.txt',
         }
     }
+]
+
+const AdcInfoDly = [
+    channel1= {id: "PID65863"},
+    channel2= {id: "PID131399"},
+    channel3= {id: "PID196935"},
+    channel4= {id: "PID262471"},
+    channel5= {id: "PID65863"},
+    channel6= {id: "PID131399"},
+    channel7= {id: "PID196935"},
+    channel8= {id: "PID262471"}
 ]
 
 var selectedEquipament
@@ -68,131 +73,81 @@ function selectedAsideButton (button) {
     button.setAttribute('style', 'color:#2B2D42; background-color:#CEFF1A')
     const selectedValue = button.getAttribute('value')
     selectedEquipament = swmixRoutes.find(equipamentRoutes => equipamentRoutes.name == selectedValue  )
-    refreshStatusInfo()
+    
+    refreshDlyInfo()
 }
 
-async function refreshStatusInfo(){  
-    const pageMuxStatus = document.querySelectorAll('#rightMainCardContainer .containerItemList .circle')
-    const pageFirstAdcStatus = document.querySelectorAll('#firstAdc .containerItemList .circle')
-    const pageLastAdcStatus = document.querySelectorAll('#lastAdc .containerItemList .circle')
+async function refreshDlyInfo(){  
+    const pageTextGainValue = document.querySelectorAll('.sliderTextValue')
+    const sliders = document.querySelectorAll('input.slider')
 
-    const muxStatus = []
-    const firstAdcStatus = []
-    const lastAdcStatus = []
+    const getGainValue = []
     
-    // GET MUX STATUS //
-    await fetch(selectedEquipament.status.muxRoute).then(res =>  {
+    //GET FIRST ADC Gain //
+    await fetch(selectedEquipament.gain.firstAdcRoute).then(res =>  {
         return res.text()
     }).then( res => {
         const parser = new DOMParser()
         const htmlToParse = parser.parseFromString(res,'text/html')
-        
-        const initialVideoParseStatus = htmlToParse.querySelector('Left')
-        const parsedVideoHtml = initialVideoParseStatus.children[3].querySelectorAll('font')[2]
-        
-        const videoStatus = parsedVideoHtml.innerHTML
-        
-        const initialParseAesStatus = htmlToParse.querySelector('.BASE')
-        const parsedAesHtml = initialParseAesStatus.getElementsByTagName('table')[1].children[0]
-        
-        const htmlCH1 = parsedAesHtml.children[2]
-        const htmlCH2 = parsedAesHtml.children[3]
-        const htmlCH3 = parsedAesHtml.children[5]
-        const htmlCH4 = parsedAesHtml.children[6]
-        const htmlCH5 = parsedAesHtml.children[8]
-        const htmlCH6 = parsedAesHtml.children[9]
-        const htmlCH7 = parsedAesHtml.children[11]
-        const htmlCH8 = parsedAesHtml.children[12]
-        
-        const muxParsedStatus =
-        [
-            video = videoStatus,
-            CH1 = htmlCH1.children[6].children[0].innerHTML,
-            CH2 = htmlCH2.children[3].children[0].innerHTML,
-            CH3 = htmlCH3.children[6].children[0].innerHTML,
-            CH4 = htmlCH4.children[3].children[0].innerHTML,
-            CH5 = htmlCH5.children[5].children[0].innerHTML,
-            CH6 = htmlCH6.children[3].children[0].innerHTML,
-            CH7 = htmlCH7.children[5].children[0].innerHTML,
-            CH8 = htmlCH8.children[3].children[0].innerHTML
-        ]
-        muxParsedStatus.forEach(item => {
-            muxStatus.push(item)
-        })      
-    })
-
-    //GET FIRST ADC STATUS //
-
-    await fetch(selectedEquipament.status.firstAdcRoute).then(res =>  {
-        return res.text()
-    }).then( res => {
-        const parser = new DOMParser()
-        const htmlToParse = parser.parseFromString(res,'text/html')
-        
-        const initialParseStatus = htmlToParse.querySelectorAll('table')
-
-        const presenceParseStatus = initialParseStatus[4].children[0].children[2]
-
-        
-        const parsedPresence = presenceParseStatus.querySelectorAll('font')
-
-         parsedPresence.forEach(channel => {
-             firstAdcStatus.push(channel.innerHTML)
-        })
-        
-    })
-
-    //GET LAST ADC STATUS //
-    await fetch(selectedEquipament.status.lastAdcRoute).then(res =>  {
-        return res.text()
-    }).then( res => {
-        const parser = new DOMParser()
-        const htmlToParse = parser.parseFromString(res,'text/html')
-        
-        const initialParseStatus = htmlToParse.querySelectorAll('table')
-
-        const presenceParseStatus = initialParseStatus[4].children[0].children[2]
-
-        
-        const parsedPresence = presenceParseStatus.querySelectorAll('font')
-
-         parsedPresence.forEach(channel => {
-             lastAdcStatus.push(channel.innerHTML)
-        })
-        
-    })
-    
-
-   
-    for(var i = 0; i < firstAdcStatus.length; i++){
-        if(firstAdcStatus[i] != "true"){
-        pageFirstAdcStatus[i].setAttribute("style", "background-color: #FF5757")
-    } else {
-        pageFirstAdcStatus[i].setAttribute("style", "background-color: #57FF86")
-    }
-    }
-
-    for(var i = 0; i < lastAdcStatus.length; i++){
-        if(lastAdcStatus[i] != "true"){
-        pageLastAdcStatus[i].setAttribute("style", "background-color: #FF5757")
-    } else {
-        pageLastAdcStatus[i].setAttribute("style", "background-color: #57FF86")
-    }
-    }
-
-
-    for(var i = 0; i < muxStatus.length; i++){ 
-
-        if(muxStatus[i] != "Present"){
-            pageMuxStatus[i].setAttribute("style", "background-color: #FF5757")
-        } else {
-            pageMuxStatus[i].setAttribute("style", "background-color: #57FF86")
+        for(var i = 0; i < 4; i++){   
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoDly[i].id}"]`)[0].value) 
         }
+    })
 
-       
-    
-    }
-    
+    //GET LAST ADC GAIN //
+    await fetch(selectedEquipament.gain.lastAdcRoute).then(res =>  {
+        return res.text()
+    }).then( res => {
+        const parser = new DOMParser()
+        const htmlToParse = parser.parseFromString(res,'text/html')
+        for(var i = 0; i < 4; i++){   
+            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoDly[i].id}"]`)[0].value) 
+        }
+    })
+    for (var i = 0; i < sliders.length; i++){
+        sliders[i].value = getGainValue[i]
+        progressTrack(sliders[i])
+     }
 }
 
-setInterval(refreshStatusInfo, 3000)
+// HANDLE DROPDOWN EVENTS //
+
+const itemsList = document.querySelectorAll(".itemList")
+const listBox = document.getElementById("listBox")
+const selectionArrow = document.getElementById("selectionArrow")
+const cardTitle = document.getElementById("cardTitle")
+
+toggleListBox()
+
+function toggleListBox(){
+    if(listBox.style.display == 'none'){
+        listBox.style.display = 'flex'
+        selectionArrow.style.transform ='none'
+    } else {
+        listBox.style.display = 'none'
+        selectionArrow.style.transform ='rotate(180deg)'
+    }
+}
+
+function changeCardTitle(value) {
+    const cardTitle = document.getElementById("cardTitle")
+    toggleListBox()
+    cardTitle.value = value
+}
+
+itemsList.forEach(item => {
+    item.addEventListener('click', e=> {
+        changeCardTitle(item.innerHTML)
+    })
+});
+
+selectionArrow.addEventListener('click', e =>{
+    toggleListBox()
+})
+
+cardTitle.addEventListener('click', e =>{
+    toggleListBox()
+})
+
+
+setInterval(refreshDlyInfo, 3000)

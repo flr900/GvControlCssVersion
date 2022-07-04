@@ -173,4 +173,4 @@ function handleWheelEvent(event){
         stepDown(event.target.attributes)
     }
 }
-setInterval(refreshDlyInfo, 3000)
+// setInterval(refreshDlyInfo, 3000)
