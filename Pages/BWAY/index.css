@@ -184,7 +184,7 @@ header span{
   
   display: grid;
 
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 100px 1fr 100px 1fr;
   grid-template-columns: repeat(4, 1fr);
   
 
