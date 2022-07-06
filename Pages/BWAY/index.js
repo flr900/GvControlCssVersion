@@ -83,16 +83,19 @@ async function refreshBwayInfo(){
     const pageTextGainValue = document.querySelectorAll('.sliderTextValue')
     const sliders = document.querySelectorAll('input.slider')
 
-    const getGainValue = []
+    const getChannelRouted = []
     
     //GET FIRST ADC BWAY //
     await fetch(selectedEquipament.bway.firstAdcRoute).then(res =>  {
         return res.text()
     }).then( res => {
         const parser = new DOMParser()
+
         const htmlToParse = parser.parseFromString(res,'text/html')
+        const selectedChannels = (htmlToParse.querySelectorAll( `input[checked=\"\"`))
+        
         for(var i = 0; i < 4; i++){   
-            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoDly[i].id}"]`)[0].value) 
+            getChannelRouted.push(selectedChannels[i].value) 
         }
     })
 
@@ -101,15 +104,20 @@ async function refreshBwayInfo(){
         return res.text()
     }).then( res => {
         const parser = new DOMParser()
+    
         const htmlToParse = parser.parseFromString(res,'text/html')
+        const selectedChannels = (htmlToParse.querySelectorAll( `input[checked=\"\"`))
+        
         for(var i = 0; i < 4; i++){   
-            getGainValue.push(htmlToParse.querySelectorAll( `input[name="${AdcInfoDly[i].id}"]`)[0].value) 
+            getChannelRouted.push(selectedChannels[i].value) 
         }
     })
-    for (var i = 0; i < sliders.length; i++){
-        sliders[i].value = getGainValue[i]
-        progressTrack(sliders[i])
-     }
+
+    console.log(getChannelRouted)
+    // for (var i = 0; i < sliders.length; i++){
+    //     sliders[i].value = getChannelRouted[i]
+    //     progressTrack(sliders[i])
+    //  }
 }
 
 
