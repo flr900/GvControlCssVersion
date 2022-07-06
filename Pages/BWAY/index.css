@@ -1,6 +1,9 @@
 
 @font-face {
   font-family: 'Roboto Condensed';
+  src: url('../../Fonts/RobotoCondensed-Bold.ttf') format('opentype');
+  src: url('../../Fonts/RobotoCondensed-BoldItalic.ttf') format('opentype');
+  src: url('../../Fonts/RobotoCondensed-Italic.ttf') format('opentype');
   src: url('../../Fonts/RobotoCondensed-Regular.ttf')format('opentype');
   src: url('../../Fonts/RobotoCondensed-Light.ttf') format('opentype')
 }
@@ -184,12 +187,12 @@ header span{
   
   display: grid;
 
-  grid-template-rows: 100px 1fr 100px 1fr;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 50px 1fr 50px 1fr;
+  grid-template-columns: 1fr;
   
 
   align-items: center;
-  justify-items: end;
+  justify-items: center;
 
   border-radius: 20px;
   background-color: #2B2D42;
@@ -213,6 +216,34 @@ header span{
   border-radius: 20px;
 }
 
+.groupAdc {
+  display: flex
+}
+
+.equipIdentfier{
+  color:#fff;
+  font-size: 5rem;
+}
+
+#firstAdc{
+  grid-row: 2;
+}
+
+#firstText{
+  grid-row: 1;
+  grid-column: 1 / span 4;
+  margin-top: 1.38vh
+}
+
+#lastAdc{
+  grid-row: 4;
+
+}
+
+#secondText{
+  grid-row: 3;
+}
+
 .channelHeader {
 
   align-items: center;
@@ -221,7 +252,7 @@ header span{
   max-width: 240px;
   width: 70.58%;
   max-height: 64px;
-  height: 20.61%;
+  height: 40.61%;
 
   /* margin-top: 40px; */
 
@@ -283,7 +314,7 @@ input{
   width: 70.58%;
   
   font-family: 'Roboto Condensed';
-  font-style: normal;
+  font-style: bold;
   font-weight: 400;
   font-size: 3.5rem;
   
