@@ -2,58 +2,60 @@
 const swmixRoutes = [
     swMix1= {
         'name': 'swMix1',
-        'gain':{
-            'firstAdcRoute': '../../htmlExamples/SwMix1/HTML ADC AUDIO DLY FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix1/HTML ADC AUDIO DLY LAST ADC.txt',
+        'bway':{
+            'firstAdcRoute': '../../htmlExamples/SwMix1/HTML ADC AUDIO CHANNEL PAIRING FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix1/HTML ADC AUDIO CHANNEL PAIRING LAST ADC.txt',
         }
     },
     swMix2= {
         'name': 'swMix2',
-        'gain':{
-            'firstAdcRoute': '../../htmlExamples/SwMix2/HTML ADC AUDIO DLY FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix2/HTML ADC AUDIO DLY LAST ADC.txt',
+        'bway':{
+            'firstAdcRoute': '../../htmlExamples/SwMix2/HTML ADC AUDIO CHANNEL PAIRING FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix2/HTML ADC AUDIO CHANNEL PAIRING LAST ADC.txt',
         }
     },
     swMix3= {
         'name': 'swMix3',
-        'gain':{
-            'firstAdcRoute': '../../htmlExamples/SwMix3/HTML ADC AUDIO DLY FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix3/HTML ADC AUDIO DLY LAST ADC.txt',
+        'bway':{
+            'firstAdcRoute': '../../htmlExamples/SwMix3/HTML ADC AUDIO CHANNEL PAIRING FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix3/HTML ADC AUDIO CHANNEL PAIRING LAST ADC.txt',
         }
     },
     swMix4= {
         'name': 'swMix4',
-        'gain':{
-            'firstAdcRoute': '../../htmlExamples/SwMix4/HTML ADC AUDIO DLY FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix4/HTML ADC AUDIO DLY LAST ADC.txt',
+        'bway':{
+            'firstAdcRoute': '../../htmlExamples/SwMix4/HTML ADC AUDIO CHANNEL PAIRING FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix4/HTML ADC AUDIO CHANNEL PAIRING LAST ADC.txt',
         }
     },
     swMix5= {
         'name': 'swMix5',
-        'gain':{
-            'firstAdcRoute': '../../htmlExamples/SwMix5/HTML ADC AUDIO DLY FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix5/HTML ADC AUDIO DLY LAST ADC.txt',
+        'bway':{
+            'firstAdcRoute': '../../htmlExamples/SwMix5/HTML ADC AUDIO CHANNEL PAIRING FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix5/HTML ADC AUDIO CHANNEL PAIRING LAST ADC.txt',
         }
     },
     swMix6= {
         'name': 'swMix6',
-        'gain':{
-            'firstAdcRoute': '../../htmlExamples/SwMix6/HTML ADC AUDIO DLY FIRST ADC.txt',
-            'lastAdcRoute': '../../htmlExamples/SwMix6/HTML ADC AUDIO DLY LAST ADC.txt',
+        'bway':{
+            'firstAdcRoute': '../../htmlExamples/SwMix6/HTML ADC AUDIO CHANNEL PAIRING FIRST ADC.txt',
+            'lastAdcRoute': '../../htmlExamples/SwMix6/HTML ADC AUDIO CHANNEL PAIRING LAST ADC.txt',
         }
     }
 ]
 
-const AdcInfoDly = [
-    channel1= {id: "PID65863"},
-    channel2= {id: "PID131399"},
-    channel3= {id: "PID196935"},
-    channel4= {id: "PID262471"},
-    channel5= {id: "PID65863"},
-    channel6= {id: "PID131399"},
-    channel7= {id: "PID196935"},
-    channel8= {id: "PID262471"}
+const AdcInfoBway = [
+    channel1= {id: "PID66439"},
+    channel2= {id: "PID131975"},
+    channel3= {id: "PID197511"},
+    channel4= {id: "PID263047"},
+    channel5= {id: "PID66439"},
+    channel6= {id: "PID131975"},
+    channel7= {id: "PID197511"},
+    channel8= {id: "PID263047"}
 ]
+
+
 
 var selectedEquipament
 var cacheLastButton
@@ -74,17 +76,17 @@ function selectedAsideButton (button) {
     const selectedValue = button.getAttribute('value')
     selectedEquipament = swmixRoutes.find(equipamentRoutes => equipamentRoutes.name == selectedValue  )
     
-    refreshDlyInfo()
+    refreshBwayInfo()
 }
 
-async function refreshDlyInfo(){  
+async function refreshBwayInfo(){  
     const pageTextGainValue = document.querySelectorAll('.sliderTextValue')
     const sliders = document.querySelectorAll('input.slider')
 
     const getGainValue = []
     
-    //GET FIRST ADC Gain //
-    await fetch(selectedEquipament.gain.firstAdcRoute).then(res =>  {
+    //GET FIRST ADC BWAY //
+    await fetch(selectedEquipament.bway.firstAdcRoute).then(res =>  {
         return res.text()
     }).then( res => {
         const parser = new DOMParser()
@@ -95,7 +97,7 @@ async function refreshDlyInfo(){
     })
 
     //GET LAST ADC GAIN //
-    await fetch(selectedEquipament.gain.lastAdcRoute).then(res =>  {
+    await fetch(selectedEquipament.bway.lastAdcRoute).then(res =>  {
         return res.text()
     }).then( res => {
         const parser = new DOMParser()
@@ -110,17 +112,22 @@ async function refreshDlyInfo(){
      }
 }
 
+
+
+
+
 // HANDLE DROPDOWN EVENTS //
 
 const itemsList = document.querySelectorAll(".itemList")
-const listBox = document.getElementById("listBox")
-const selectionArrow = document.getElementById("selectionArrow")
-const cardTitle = document.getElementById("cardTitle")
+const cardHeader = document.querySelectorAll(".dropDownTitle")
 
-toggleListBox()
+function toggleListBox(element){
+    const dropDownChannel = element.getAttribute("name")
+    const dropdownGroup = document.querySelectorAll(`div [name = ${dropDownChannel}]`)
+    const listBox = dropdownGroup[1]
+    const selectionArrow = dropdownGroup[0].children[1]
 
-function toggleListBox(){
-    if(listBox.style.display == 'none'){
+    if(listBox.style.display != 'flex'){
         listBox.style.display = 'flex'
         selectionArrow.style.transform ='none'
     } else {
@@ -129,25 +136,25 @@ function toggleListBox(){
     }
 }
 
-function changeCardTitle(value) {
-    const cardTitle = document.getElementById("cardTitle")
-    toggleListBox()
-    cardTitle.value = value
+function changeCardTitle(listBox, value) {
+    const channel = listBox.getAttribute('name')
+    const cardInput = document.querySelector(`div [name = ${channel}] > input `)
+    toggleListBox(listBox)
+    cardInput.value = value
 }
 
 itemsList.forEach(item => {
     item.addEventListener('click', e=> {
-        changeCardTitle(item.innerHTML)
+        changeCardTitle(item.parentElement.parentElement, item.innerHTML)
     })
 });
 
-selectionArrow.addEventListener('click', e =>{
-    toggleListBox()
+
+cardHeader.forEach(header => {
+    header.addEventListener('click', e => {
+        toggleListBox(header)
+    })
 })
 
-cardTitle.addEventListener('click', e =>{
-    toggleListBox()
-})
 
-
-setInterval(refreshDlyInfo, 3000)
+// setInterval(refreshBwayInfo, 3000)

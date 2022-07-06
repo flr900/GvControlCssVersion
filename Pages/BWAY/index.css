@@ -222,7 +222,8 @@ header span{
 
 .equipIdentfier{
   color:#fff;
-  font-size: 5rem;
+  font-size: 4.5rem;
+  font-weight: 400;
 }
 
 #firstAdc{
@@ -289,7 +290,7 @@ div.dropDownTitle{
   margin-bottom: 15px;
 
   max-height: 64px;
-  height: 20.61%;
+  height: 40.61%;
 
 }
 
@@ -328,7 +329,7 @@ input:focus{
   border:none
 }
 
-div#listBox{
+div.listBox{
   border: none;
   border-radius: 20px;
 
@@ -345,6 +346,7 @@ div#listBox{
 
   display: none;
   flex-direction: column;
+  gap: 2px;
 
   justify-content: center;
   
@@ -358,9 +360,7 @@ div#listBox{
 }
 
 div.itemFill{
-  margin: 5px 0;
   max-width: 200px;
-  width: 83.33%;
   border-radius: 20px;
   cursor: pointer;
 }
