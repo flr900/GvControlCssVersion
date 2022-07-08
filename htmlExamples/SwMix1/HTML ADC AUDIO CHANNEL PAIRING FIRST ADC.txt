@@ -120,9 +120,9 @@ Last Recalled E-MEM: <font color="#0000FF">-</font>
 <input type="hidden" name="URL" value="cntaudio_channel_pairing.htm#Input Stream Select" >
 <tr>
 <td>AES In 1 A</td><td align="center">
-<input type="radio" name="PID66439" value="ENUMINT(1)" checked></td>
+<input type="radio" name="PID66439" value="ENUMINT(1)"onClick="this.form.submit()" ></td>
 <td align="center">
-<input type="radio" name="PID131975" value="ENUMINT(1)" onClick="this.form.submit()"></td>
+<input type="radio" name="PID131975" value="ENUMINT(1)" checked></td>
 <td align="center">
 <input type="radio" name="PID197511" value="ENUMINT(1)" onClick="this.form.submit()"></td>
 <td align="center">

@@ -134,9 +134,9 @@ Last Recalled E-MEM: <font color="#0000FF">-</font>
 <td>AES In 1 B</td><td align="center">
 <input type="radio" name="PID66439" value="ENUMINT(2)" onClick="this.form.submit()"></td>
 <td align="center">
-<input type="radio" name="PID131975" value="ENUMINT(2)" checked></td>
+<input type="radio" name="PID131975" value="ENUMINT(2)" onClick="this.form.submit()"></td>
 <td align="center">
-<input type="radio" name="PID197511" value="ENUMINT(2)" onClick="this.form.submit()"></td>
+<input type="radio" name="PID197511" value="ENUMINT(2)" checked></td>
 <td align="center">
 <input type="radio" name="PID263047" value="ENUMINT(2)" onClick="this.form.submit()"></td>
 </tr>
@@ -146,9 +146,9 @@ Last Recalled E-MEM: <font color="#0000FF">-</font>
 <td align="center">
 <input type="radio" name="PID131975" value="ENUMINT(4)" onClick="this.form.submit()"></td>
 <td align="center">
-<input type="radio" name="PID197511" value="ENUMINT(4)" checked></td>
+<input type="radio" name="PID197511" value="ENUMINT(4) onClick="this.form.submit()"></td>
 <td align="center">
-<input type="radio" name="PID263047" value="ENUMINT(4)" onClick="this.form.submit()"></td>
+<input type="radio" name="PID263047" value="ENUMINT(4)" checked></td>
 </tr>
 <tr>
 <td>AES In 2 D</td><td align="center">

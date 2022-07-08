@@ -44,18 +44,43 @@ const swmixRoutes = [
     }
 ]
 
-const AdcInfoBway = [
-    channel1= {id: "PID66439"},
-    channel2= {id: "PID131975"},
-    channel3= {id: "PID197511"},
-    channel4= {id: "PID263047"},
-    channel5= {id: "PID66439"},
-    channel6= {id: "PID131975"},
-    channel7= {id: "PID197511"},
-    channel8= {id: "PID263047"}
+const AdcInfoBwayFirstAdc = [
+    channel1= {
+        name: "CANAL 1",
+        id: "PID66439",
+        defaultValue: "ENUMINT(1)"},
+    channel2= {
+        name: "CANAL 2",
+        id: "PID131975",
+        defaultValue: "ENUMINT(2)"},
+    channel3= {
+        name: "CANAL 3",
+        id: "PID197511",
+        defaultValue: "ENUMINT(4)"},
+    channel4= {
+        name: "CANAL 4",
+        id: "PID263047",
+        defaultValue: "ENUMINT(8)"}
 ]
 
-
+const AdcInfoBwayLastAdc = [
+    channel5= {
+        name: "CANAL 5",
+        id: "PID66439",
+        defaultValue: "ENUMINT(1)"},
+    channel6= {
+        name: "CANAL 6",
+        id: "PID131975",
+        defaultValue: "ENUMINT(2)"},
+    channel7= {
+        name: "CANAL 7",
+        id: "PID197511",
+        defaultValue: "ENUMINT(4)"},
+    channel8= {
+        name: "CANAL 8",
+        id: "PID263047",
+        defaultValue: "ENUMINT(8)"}
+]
 
 var selectedEquipament
 var cacheLastButton
@@ -80,8 +105,8 @@ function selectedAsideButton (button) {
 }
 
 async function refreshBwayInfo(){  
-    const pageTextGainValue = document.querySelectorAll('.sliderTextValue')
-    const sliders = document.querySelectorAll('input.slider')
+    const dropdownInputsFirstAdc = document.querySelectorAll('div#firstAdc  input')
+    const dropdownInputsLastAdc = document.querySelectorAll('div#lastAdc  input')
 
     const getChannelRouted = []
     
@@ -90,34 +115,39 @@ async function refreshBwayInfo(){
         return res.text()
     }).then( res => {
         const parser = new DOMParser()
-
-        const htmlToParse = parser.parseFromString(res,'text/html')
-        const selectedChannels = (htmlToParse.querySelectorAll( `input[checked=\"\"`))
         
-        for(var i = 0; i < 4; i++){   
-            getChannelRouted.push(selectedChannels[i].value) 
+        const htmlToParse = parser.parseFromString(res,'text/html')
+        const selectedChannels = (htmlToParse.querySelectorAll( `input[checked=\"\"]`))
+        
+
+        for(var i = 0; i < 4; i++){
+            const channelName = AdcInfoBwayFirstAdc.find(item => item.id == selectedChannels[i].name)
+            if( dropdownInputsFirstAdc[i].id = selectedChannels[i].value) {
+                dropdownInputsFirstAdc[i].value = channelName.name
+                dropdownInputsFirstAdc[i].setAttribute('channelSelected', selectedChannels[i].name)
+            } 
         }
     })
-
+    
     //GET LAST ADC GAIN //
     await fetch(selectedEquipament.bway.lastAdcRoute).then(res =>  {
         return res.text()
     }).then( res => {
         const parser = new DOMParser()
-    
-        const htmlToParse = parser.parseFromString(res,'text/html')
-        const selectedChannels = (htmlToParse.querySelectorAll( `input[checked=\"\"`))
         
-        for(var i = 0; i < 4; i++){   
-            getChannelRouted.push(selectedChannels[i].value) 
+        const htmlToParse = parser.parseFromString(res,'text/html')
+        const selectedChannels = (htmlToParse.querySelectorAll( `input[checked=\"\"]`))
+        
+        for(var i = 0; i < 4; i++){
+            const channelName = AdcInfoBwayLastAdc.find(item => item.id == selectedChannels[i].name)
+
+            if( dropdownInputsLastAdc[i].id = selectedChannels[i].value) {
+
+                dropdownInputsLastAdc[i].value = channelName.name
+                dropdownInputsLastAdc[i].setAttribute('channelSelected', selectedChannels[i].name)
+            } 
         }
     })
-
-    console.log(getChannelRouted)
-    // for (var i = 0; i < sliders.length; i++){
-    //     sliders[i].value = getChannelRouted[i]
-    //     progressTrack(sliders[i])
-    //  }
 }
 
 
@@ -144,16 +174,21 @@ function toggleListBox(element){
     }
 }
 
-function changeCardTitle(listBox, value) {
+function changeCardTitle(listBox, item) {
     const channel = listBox.getAttribute('name')
     const cardInput = document.querySelector(`div [name = ${channel}] > input `)
+
+    const value = item.attributes.value.value
+    const channelText = item.innerHTML
+
     toggleListBox(listBox)
-    cardInput.value = value
+    cardInput.value = channelText
+    cardInput.setAttribute('channelSelected', value)
 }
 
 itemsList.forEach(item => {
     item.addEventListener('click', e=> {
-        changeCardTitle(item.parentElement.parentElement, item.innerHTML)
+        changeCardTitle(item.parentElement.parentElement, item)
     })
 });
 
@@ -165,4 +200,4 @@ cardHeader.forEach(header => {
 })
 
 
-// setInterval(refreshBwayInfo, 3000)
+setInterval(refreshBwayInfo, 3000)
